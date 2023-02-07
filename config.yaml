@@ -1,0 +1,7 @@
+patientlist: "metadata/patientlist.csv"
+ref: "/juno/work/shah/isabl_data_lake/assemblies/GRCh37/GRCh37-lite/GRCh37-lite.fa"
+ref_index: "/juno/work/shah/isabl_data_lake/assemblies/GRCh37/GRCh37-lite/GRCh37-lite.fa.fai"
+log_dir: "logs"
+tmp_dir: "tmp"
+
+test_mode: False

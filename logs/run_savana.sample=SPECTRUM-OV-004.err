@@ -1,0 +1,29 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=477991, disk_mb=477991
+Select jobs to execute...
+
+[Tue Jan 31 11:31:29 2023]
+rule run_savana:
+    input: /juno/work/shah/isabl_data_lake/analyses/70/03/27003/results/minimap2/SHAH_H000029_N04_01_WG01_R1.sorted.bam, /juno/work/shah/isabl_data_lake/analyses/73/04/27304/results/minimap2/SHAH_H000222_T01_07_WG02_R1.sorted.bam
+    output: results/SPECTRUM-OV-004/savana, results/SPECTRUM-OV-004/savana/DONE
+    jobid: 0
+    reason: Forced execution
+    wildcards: sample=SPECTRUM-OV-004
+    threads: 4
+    resources: mem_mb=477991, disk_mb=477991, tmpdir=/juno/work/shah/users/chois7/tmp
+
+Activating singularity image /juno/work/shah/users/chois7/tickets/savana/pipeline/.snakemake/singularity/fa2e5f94e782edb5ae21133f32c10b07.simg
+ImproperOutputException in rule run_savana in line 17 of /juno/work/shah/users/chois7/tickets/savana/pipeline/rules/savana.smk:
+Outputs of incorrect type (directories when expecting files or vice versa). Output directories must be flagged with directory(). for rule run_savana:
+    output: results/SPECTRUM-OV-004/savana, results/SPECTRUM-OV-004/savana/DONE
+    wildcards: sample=SPECTRUM-OV-004
+    affected files:
+        results/SPECTRUM-OV-004/savana
+Removing output files of failed job run_savana since they might be corrupted:
+results/SPECTRUM-OV-004/savana, results/SPECTRUM-OV-004/savana/DONE
+Skipped removing non-empty directory results/SPECTRUM-OV-004/savana
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
