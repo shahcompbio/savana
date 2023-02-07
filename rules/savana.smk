@@ -19,15 +19,14 @@ rule run_savana:
         normal_bam = _get_ont_normal_bam,
         tumor_bam = _get_ont_tumor_bam,
     output:
-        outdir = "results/{sample}/savana",
-        done = "results/{sample}/savana/DONE",
+        vcf = "results/{sample}/savana/somatic.sv_breakpoints.strict.vcf",
     singularity: "docker://soymintc/savana:latest"
     params:
+        outdir = "results/{sample}/savana",
         ref = config['ref'],
         ref_index = config['ref_index'],
     threads: 4
     shell:
         """
-        savana --tumour {input.tumor_bam} --normal {input.normal_bam} --ref {params.ref} --ref_index {params.ref_index} --outdir {output.outdir} --threads {threads}
-        touch {output.done}
+        savana --tumour {input.tumor_bam} --normal {input.normal_bam} --ref {params.ref} --ref_index {params.ref_index} --outdir {params.outdir} --threads {threads}
         """
