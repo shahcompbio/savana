@@ -1,13 +1,13 @@
 patientlist: metadata/patientlist.csv
-paths_file: resources/paths.ONT-NANOSEQ.tsv
-
+paths_file: resources/sarcoma.APS017.tsv
+out_dir: /data/shahlab/preskaa/APS017_Archive
 log_dir: ./logs
 tmp_dir: ./tmp
 
 #ref: /juno/work/shah/isabl_data_lake/assemblies/GRCh37/GRCh37-lite/GRCh37-lite.fa
 #ref_index: /juno/work/shah/isabl_data_lake/assemblies/GRCh37/GRCh37-lite/GRCh37-lite.fa.fai
-ref: /juno/work/shah/isabl_data_lake/assemblies/WGS-GRCh38/human/GRCh38_full_analysis_set_plus_decoy_hla.fa
-ref_index: /juno/work/shah/isabl_data_lake/assemblies/WGS-GRCh38/human/GRCh38_full_analysis_set_plus_decoy_hla.fa.fai
+ref: /data/shahlab/preskaa/resources/GRCh38.d1.vd1.fa
+ref_index: /data/shahlab/preskaa/resources/GRCh38.d1.vd1.fa.fai
 
 genome_fai: /juno/work/shah/isabl_data_lake/assemblies/WGS-GRCh38/human/GRCh38_full_analysis_set_plus_decoy_hla.fa.fai
 genome_gtf_gz: /juno/work/shah/users/chois7/tickets/sarcoma89/refactor/pipeline/resources/tabix_gtf/results/genes.gtf.gz

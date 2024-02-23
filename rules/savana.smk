@@ -31,16 +31,20 @@ def _get_ont_tumor_bam(wildcards):
     assert os.path.exists(path), path
     return path
 
+out_dir = config["out_dir"]
+
 rule run_savana:
     input: 
         normal_bam = _get_ont_normal_bam,
         tumor_bam = _get_ont_tumor_bam,
     output:
         #vcf = lambda wildcards: f'results/{{sample}}/savana/{_get_system_id_from_bam(wildcards.input)}.',
-        vcf = "results/{sample}/savana/variant.stats",
+        #vcf = "results/{sample}/savana/variant.stats",
+        vcf= os.path.join(out_dir, "{sample}/savana/variant.stats"),
     #singularity: "docker://soymintc/savana:latest"
     params:
-        outdir = "results/{sample}/savana",
+        #outdir = "results/{sample}/savana",
+        outdir = os.path.join(out_dir,"{sample}/savana"),
         ref = config['ref'],
         ref_index = config['ref_index'],
     threads: 12
